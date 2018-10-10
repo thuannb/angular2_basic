@@ -10,13 +10,18 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 var tutorial_component_1 = require("./tutorial.component");
+var tutorial_event_binding_component_1 = require("./tutorial.event_binding.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [app_component_1.AppComponent, tutorial_component_1.TutorialComponent],
+            declarations: [
+                app_component_1.AppComponent,
+                tutorial_component_1.TutorialComponent,
+                tutorial_event_binding_component_1.TutorialEventBindingComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

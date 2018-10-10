@@ -18,7 +18,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>Hello {{name}}</h1>\n  <img [src]=\"image\" />\n  <my-tutorial></my-tutorial>\n  <input type=\"text\" [value] = \"wellcome\"/>\n  ",
+            template: "\n  <h1>Hello {{name}}</h1>\n  <img [src]=\"image\" />\n  <my-tutorial></my-tutorial>\n  <input type=\"text\" [value] = \"wellcome\"/>\n  <my-tutorial-event_binding></my-tutorial-event_binding>\n  ",
             styles: ['h4 {color:blue;}']
         })
     ], AppComponent);

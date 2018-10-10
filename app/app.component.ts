@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   <img [src]="image" />
   <my-tutorial></my-tutorial>
   <input type="text" [value] = "wellcome"/>
+  <my-tutorial-event_binding></my-tutorial-event_binding>
   `,
   styles: ['h4 {color:blue;}']
 })
