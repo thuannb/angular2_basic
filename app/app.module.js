@@ -8,19 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
 var tutorial_component_1 = require("./tutorial.component");
 var tutorial_event_binding_component_1 = require("./tutorial.event_binding.component");
+var tutorial_twowaybinding_component_1 = require("./tutorial.twowaybinding.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
                 app_component_1.AppComponent,
                 tutorial_component_1.TutorialComponent,
-                tutorial_event_binding_component_1.TutorialEventBindingComponent
+                tutorial_event_binding_component_1.TutorialEventBindingComponent,
+                tutorial_twowaybinding_component_1.TutorialTwoWayBindingComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         })

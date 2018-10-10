@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   <my-tutorial></my-tutorial>
   <input type="text" [value] = "wellcome"/>
   <my-tutorial-event_binding></my-tutorial-event_binding>
+  <my-tutorial-two_way_binding></my-tutorial-two_way_binding>
   `,
   styles: ['h4 {color:blue;}']
 })
