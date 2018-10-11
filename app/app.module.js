@@ -15,6 +15,7 @@ var tutorial_event_binding_component_1 = require("./tutorial.event_binding.compo
 var tutorial_twowaybinding_component_1 = require("./tutorial.twowaybinding.component");
 var tutorial_structural_directive_component_1 = require("./tutorial.structural_directive.component");
 var tutorial_attribute_directive_component_1 = require("./tutorial.attribute_directive.component");
+var exponential_strength_pipe_1 = require("./exponential-strength.pipe");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = /** @class */ (function () {
                 tutorial_event_binding_component_1.TutorialEventBindingComponent,
                 tutorial_twowaybinding_component_1.TutorialTwoWayBindingComponent,
                 tutorial_structural_directive_component_1.TutorialStructuralDirectiveComponent,
-                tutorial_attribute_directive_component_1.TutorialAttributeDirectiveComponent
+                tutorial_attribute_directive_component_1.TutorialAttributeDirectiveComponent,
+                exponential_strength_pipe_1.ExponentialStrengthPipe
             ],
             bootstrap: [app_component_1.AppComponent]
         })

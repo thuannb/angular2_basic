@@ -5,42 +5,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialComponent = /** @class */ (function () {
     function TutorialComponent() {
-        this.name = "";
-        this.nameOutput = "";
-        this.onVote = new core_1.EventEmitter();
-        this.voted = false;
+        this._uppercase = "This is paragraph use Pipe-Uppercase";
+        this._lowercase = "This is paragraph use Pipe-Lowercase";
+        this.today = Date.now();
+        this.percentA = 0.259;
+        this.percentB = 1.3495;
+        this.numberPI = 3.141592;
+        this.numberE = 2.718281828459045;
+        this.object = {
+            foo: 'bar',
+            baz: 'qux',
+            nested: {
+                xyz: 3,
+                numbers: [1, 2, 3, 4, 5]
+            }
+        };
+        this.collection = ['a', 'b', 'c', 'd'];
     }
-    TutorialComponent.prototype.clickVote = function (agree) {
-        this.voted = true;
-        //Output
-        this.onVote.emit(agree);
-    };
-    TutorialComponent.prototype.setName = function (name) {
-        this.name = name;
-    };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], TutorialComponent.prototype, "name", void 0);
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], TutorialComponent.prototype, "nameOutput", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", Object)
-    ], TutorialComponent.prototype, "onVote", void 0);
     TutorialComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "\n    <div>\n        <h3>@Input()</h3>\n        <p>This use @Input and pass value from Componet A to Component B, Child Component: {{name}}</p>\n    </div>\n\n    <div>\n        {{nameOutput}}\n        <button [disabled] = \"voted\" (click)=\"clickVote(true)\">Agree</button>\n        <button [disabled] = \"voted\" (click)=\"clickVote(false)\">Disgree</button>\n    </div>\n    "
+            template: "\n    <a href='https://v2.angular.io/docs/ts/latest/api/#!?type=pipe'>Link Pipes</a>\n    <hr/>\n    <p>{{_uppercase | uppercase}}</p>\n    <p>{{_lowercase | lowercase}}</p>\n    <hr/>\n    (date:'dd/MM/yyyy')\n    <p>{{today | date:'dd/MM/yyyy'}}</p>\n    <hr/>\n    (percent)\n    <p>A: {{percentA | percent}}</p>\n    <p>B: {{percentB | percent:'4.3-5'}}</p>\n    <hr/>\n    (number)\n    <p>e (no formatting): {{numberE}}</p>\n    <p>e (3.1-5): {{numberE | number:'3.1-5'}}</p>\n    <p>pi (no formatting): {{numberPI}}</p>\n    <p>pi (3.5-5): {{numberPI | number:'3.5-5'}}</p>\n    \n    <hr/>\n    <p>Without JSON pipe:</p>\n    <pre>{{object}}</pre>\n    <p>With JSON pipe:</p>\n    <pre>{{object | json}}</pre>\n\n    <hr/>\n    (slice:1:3)\n    <ul>\n        <li *ngFor=\"let i of collection | slice:1:3\">{{i}}</li>\n    </ul>\n    \n    <hr/>\n    (Customize Pipe)\n    {{ 2 |  exponentialStrength:5}}\n    "
         })
     ], TutorialComponent);
     return TutorialComponent;

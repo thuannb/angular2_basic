@@ -7,6 +7,7 @@ import { TutorialEventBindingComponent } from './tutorial.event_binding.componen
 import { TutorialTwoWayBindingComponent } from './tutorial.twowaybinding.component';
 import { TutorialStructuralDirectiveComponent } from './tutorial.structural_directive.component';
 import {TutorialAttributeDirectiveComponent} from './tutorial.attribute_directive.component';
+import {ExponentialStrengthPipe} from './exponential-strength.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -16,7 +17,8 @@ import {TutorialAttributeDirectiveComponent} from './tutorial.attribute_directiv
     TutorialEventBindingComponent,
     TutorialTwoWayBindingComponent,
     TutorialStructuralDirectiveComponent,
-    TutorialAttributeDirectiveComponent
+    TutorialAttributeDirectiveComponent,
+    ExponentialStrengthPipe
   ],
   bootstrap: [AppComponent]
 })
