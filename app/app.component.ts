@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
   <input type="text" [value] = "wellcome"/>
   <my-tutorial-event_binding></my-tutorial-event_binding>
   <my-tutorial-two_way_binding></my-tutorial-two_way_binding>
+  <my-tutorial-structural_directive></my-tutorial-structural_directive>
   `,
   styles: ['h4 {color:blue;}']
 })

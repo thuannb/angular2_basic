@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TutorialComponent } from './tutorial.component';
 import { TutorialEventBindingComponent } from './tutorial.event_binding.component';
 import { TutorialTwoWayBindingComponent } from './tutorial.twowaybinding.component';
+import { TutorialStructuralDirectiveComponent } from './tutorial.structural_directive.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -12,7 +13,8 @@ import { TutorialTwoWayBindingComponent } from './tutorial.twowaybinding.compone
     AppComponent,
     TutorialComponent,
     TutorialEventBindingComponent,
-    TutorialTwoWayBindingComponent
+    TutorialTwoWayBindingComponent,
+    TutorialStructuralDirectiveComponent
   ],
   bootstrap: [AppComponent]
 })

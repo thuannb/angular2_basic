@@ -13,6 +13,7 @@ var app_component_1 = require("./app.component");
 var tutorial_component_1 = require("./tutorial.component");
 var tutorial_event_binding_component_1 = require("./tutorial.event_binding.component");
 var tutorial_twowaybinding_component_1 = require("./tutorial.twowaybinding.component");
+var tutorial_structural_directive_component_1 = require("./tutorial.structural_directive.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -23,7 +24,8 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 tutorial_component_1.TutorialComponent,
                 tutorial_event_binding_component_1.TutorialEventBindingComponent,
-                tutorial_twowaybinding_component_1.TutorialTwoWayBindingComponent
+                tutorial_twowaybinding_component_1.TutorialTwoWayBindingComponent,
+                tutorial_structural_directive_component_1.TutorialStructuralDirectiveComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         })
