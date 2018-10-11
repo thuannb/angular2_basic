@@ -1,43 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'my-tutorial',
     template: `
-    <h2>This is a Tutorial component in Angular2</h2>
-    <h4 [class.redColor] = "applyClass">Apply property class</h4>
-    
-    <div [ngClass]="{'my-class': isClassVisible }">
-        I am a div that wants to be styled
-      </div>
-      <button (click)="isClassVisible = !isClassVisible;">Toggle style</button>
-      
-    <div [style.background-color] = "getStyle()">
-        Apply property style use method
+    <div>
+        <h3>@Input()</h3>
+        <p>This use @Input and pass value from Componet A to Component B, Child Component: {{name}}</p>
     </div>
-    
-    <div [style.color] = "applyStyle?'red':'blue'">
-        Apply property style use variable
+
+    <div>
+        {{nameOutput}}
+        <button [disabled] = "voted" (click)="clickVote(true)">Agree</button>
+        <button [disabled] = "voted" (click)="clickVote(false)">Disgree</button>
     </div>
-    `,
-    styles: [`
-        .redColor{
-            color:red;
-        }
-        .my-class {
-            background-color: yellow;
-          }
-    `]
+    `
 })
 export class TutorialComponent {
-    public applyClass: false;
-    public showStyle: false;
-    public applyStyle: false;
-    public isClassVisible: true;
+    @Input() name: string = "";
+    @Input() nameOutput: string = "";
+    @Output() onVote = new EventEmitter<boolean>();
 
-    getStyle() {
-        if (this.showStyle) {
-            return "yellow";
-        } else {
-            return "green";
-        }
+    public voted: boolean = false;
+
+    clickVote(agree: boolean) {
+        this.voted = true;
+        //Output
+        this.onVote.emit(agree);
+    }
+
+    setName(name:string){
+        this.name = name;
     }
 }

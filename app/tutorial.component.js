@@ -5,24 +5,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TutorialComponent = /** @class */ (function () {
     function TutorialComponent() {
+        this.name = "";
+        this.nameOutput = "";
+        this.onVote = new core_1.EventEmitter();
+        this.voted = false;
     }
-    TutorialComponent.prototype.getStyle = function () {
-        if (this.showStyle) {
-            return "yellow";
-        }
-        else {
-            return "green";
-        }
+    TutorialComponent.prototype.clickVote = function (agree) {
+        this.voted = true;
+        //Output
+        this.onVote.emit(agree);
     };
+    TutorialComponent.prototype.setName = function (name) {
+        this.name = name;
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], TutorialComponent.prototype, "name", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], TutorialComponent.prototype, "nameOutput", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", Object)
+    ], TutorialComponent.prototype, "onVote", void 0);
     TutorialComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorial',
-            template: "\n    <h2>This is a Tutorial component in Angular2</h2>\n    <h4 [class.redColor] = \"applyClass\">Apply property class</h4>\n    \n    <div [ngClass]=\"{'my-class': isClassVisible }\">\n        I am a div that wants to be styled\n      </div>\n      <button (click)=\"isClassVisible = !isClassVisible;\">Toggle style</button>\n      \n    <div [style.background-color] = \"getStyle()\">\n        Apply property style use method\n    </div>\n    \n    <div [style.color] = \"applyStyle?'red':'blue'\">\n        Apply property style use variable\n    </div>\n    ",
-            styles: ["\n        .redColor{\n            color:red;\n        }\n        .my-class {\n            background-color: yellow;\n          }\n    "]
+            template: "\n    <div>\n        <h3>@Input()</h3>\n        <p>This use @Input and pass value from Componet A to Component B, Child Component: {{name}}</p>\n    </div>\n\n    <div>\n        {{nameOutput}}\n        <button [disabled] = \"voted\" (click)=\"clickVote(true)\">Agree</button>\n        <button [disabled] = \"voted\" (click)=\"clickVote(false)\">Disgree</button>\n    </div>\n    "
         })
     ], TutorialComponent);
     return TutorialComponent;
