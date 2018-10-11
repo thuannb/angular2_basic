@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.name = "XPRO-ERP Angular2";
     }
+    AppComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>Hello {{name}}</h1>\n  <my-tutorial></my-tutorial>\n  ",
-            styles: ['h4 {color:blue;}']
+            templateUrl: "app/app.component.html"
         })
     ], AppComponent);
     return AppComponent;
