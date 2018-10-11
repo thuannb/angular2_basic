@@ -6,6 +6,7 @@ import { TutorialComponent } from './tutorial.component';
 import { TutorialEventBindingComponent } from './tutorial.event_binding.component';
 import { TutorialTwoWayBindingComponent } from './tutorial.twowaybinding.component';
 import { TutorialStructuralDirectiveComponent } from './tutorial.structural_directive.component';
+import {TutorialAttributeDirectiveComponent} from './tutorial.attribute_directive.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -14,7 +15,8 @@ import { TutorialStructuralDirectiveComponent } from './tutorial.structural_dire
     TutorialComponent,
     TutorialEventBindingComponent,
     TutorialTwoWayBindingComponent,
-    TutorialStructuralDirectiveComponent
+    TutorialStructuralDirectiveComponent,
+    TutorialAttributeDirectiveComponent
   ],
   bootstrap: [AppComponent]
 })

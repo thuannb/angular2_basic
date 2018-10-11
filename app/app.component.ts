@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
   <my-tutorial-event_binding></my-tutorial-event_binding>
   <my-tutorial-two_way_binding></my-tutorial-two_way_binding>
   <my-tutorial-structural_directive></my-tutorial-structural_directive>
+  <my-tutorial-attribute_directive></my-tutorial-attribute_directive>
   `,
   styles: ['h4 {color:blue;}']
 })
