@@ -10,6 +10,8 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var employee_component_1 = require("./employee.component");
+var employee_service_1 = require("./services/employee.service");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -17,8 +19,10 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
             declarations: [
-                app_component_1.AppComponent
+                app_component_1.AppComponent,
+                employee_component_1.EmployeeComponent
             ],
+            providers: [employee_service_1.EmployeeService],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
