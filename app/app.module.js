@@ -15,6 +15,7 @@ var employee_component_1 = require("./employee.component");
 var employee_service_1 = require("./services/employee.service");
 var http_1 = require("@angular/http");
 var app_routes_1 = require("./app.routes");
+var notfound_component_1 = require("./notfound.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -29,7 +30,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
-                employee_component_1.EmployeeComponent
+                employee_component_1.EmployeeComponent,
+                notfound_component_1.NotFoundComponent
             ],
             providers: [employee_service_1.EmployeeService],
             bootstrap: [app_component_1.AppComponent]
