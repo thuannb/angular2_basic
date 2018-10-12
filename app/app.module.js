@@ -10,9 +10,11 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var app_component_1 = require("./app.component");
+var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
 var employee_service_1 = require("./services/employee.service");
 var http_1 = require("@angular/http");
+var app_routes_1 = require("./app.routes");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -21,10 +23,12 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                app_routes_1.appRoutes
             ],
             declarations: [
                 app_component_1.AppComponent,
+                home_component_1.HomeComponent,
                 employee_component_1.EmployeeComponent
             ],
             providers: [employee_service_1.EmployeeService],
