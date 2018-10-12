@@ -8,13 +8,19 @@ import { EmployeeService } from './services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
     public employees: any[] = [];
-    public totalSum:number;
-    constructor(private employeeList: EmployeeService) {
+    public totalSum: number;
+    constructor(private employeeService: EmployeeService) {
 
     }
 
     ngOnInit() {
-        this.employees = this.employeeList.GetList();
-        this.totalSum = this.employeeList.CalcSumAmount(this.employees);
+        this.employeeService.GetList().subscribe((respones: any) => {
+            this.employees = respones;
+            console.log(respones);
+        }, error => {
+            console.log(error);
+        });
+
+        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
     }
 }

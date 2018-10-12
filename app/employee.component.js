@@ -12,13 +12,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./services/employee.service");
 var EmployeeComponent = /** @class */ (function () {
-    function EmployeeComponent(employeeList) {
-        this.employeeList = employeeList;
+    function EmployeeComponent(employeeService) {
+        this.employeeService = employeeService;
         this.employees = [];
     }
     EmployeeComponent.prototype.ngOnInit = function () {
-        this.employees = this.employeeList.GetList();
-        this.totalSum = this.employeeList.CalcSumAmount(this.employees);
+        var _this = this;
+        this.employeeService.GetList().subscribe(function (respones) {
+            _this.employees = respones;
+            console.log(respones);
+        }, function (error) {
+            console.log(error);
+        });
+        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
     };
     EmployeeComponent = __decorate([
         core_1.Component({

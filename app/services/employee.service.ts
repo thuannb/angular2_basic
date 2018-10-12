@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+
 @Injectable()
 export class EmployeeService {
-    GetList(): any[] {
-        let employees: any[] = [
-            { Id: 1, Name: "Nguyen Van Teo", Amount: 2000 },
-            { Id: 2, Name: "Tran Thi No", Amount: 4000 },
-            { Id: 3, Name: "Nguyen Chi Pheo", Amount: 5000 },
-            { Id: 4, Name: "Luc Van Tien", Amount: 10000 }
-        ]
-        return employees;
+
+    constructor(private _http: Http) {
+    }
+
+    private urlAPI: string = "http://5bc0169059c0e1001337f23b.mockapi.io/api/employees";
+
+    GetList(): Observable<any[]> {
+        return this._http.get(this.urlAPI).map((respone: Response) => respone.json());
     }
 
     CalcSumAmount(employees: any[]): number {
         let totalSum: number = 0;
-        
+
         for (const item in employees) {
             console.log(item);
             totalSum += parseFloat(employees[item]["Amount"]);

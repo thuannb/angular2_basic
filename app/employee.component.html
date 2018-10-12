@@ -1,5 +1,18 @@
-<ul>
-    <li *ngFor="let item of employees">{{item.Name}}</li>
-</ul>
-
-<p>Tong tien: <b>{{totalSum | number}}</b></p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>createdAt</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of employees">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.createdAt | date}}</td>
+        </tr>
+    </tbody>
+</table>
