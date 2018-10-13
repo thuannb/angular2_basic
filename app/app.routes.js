@@ -15,7 +15,7 @@ var routing = [
         path: 'employee-detail/:id',
         component: employee_detail_component_1.EmployeeDetailComponent,
         children: [
-            { path: '', redirectTo: 'overview', pathMatch: "full" },
+            //{ path: '', redirectTo: 'overview', pathMatch: "full" },
             { path: 'overview', component: employee_overview_component_1.EmployeeOverviewComponent },
             { path: 'projects', component: employee_project_component_1.EmployeeProjectComponent }
         ]

@@ -15,7 +15,7 @@ const routing: Routes = [
         path: 'employee-detail/:id',
         component: EmployeeDetailComponent,
         children: [
-            { path: '', redirectTo: 'overview', pathMatch: "full" },
+            //{ path: '', redirectTo: 'overview', pathMatch: "full" },
             { path: 'overview', component: EmployeeOverviewComponent },
             { path: 'projects', component: EmployeeProjectComponent }
         ]

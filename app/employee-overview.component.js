@@ -10,15 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var EmployeeOverviewComponent = /** @class */ (function () {
-    function EmployeeOverviewComponent() {
+    function EmployeeOverviewComponent(router, activedRouter) {
+        this.router = router;
+        this.activedRouter = activedRouter;
     }
+    EmployeeOverviewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.activedRouter.parent.params.subscribe(function (para) {
+            _this.parentID = para['id'];
+            alert('Overview child id:' + _this.parentID);
+        });
+    };
+    EmployeeOverviewComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
+    };
     EmployeeOverviewComponent = __decorate([
         core_1.Component({
             selector: 'employee-overview-component',
             template: "\n        <h3>This is employee overview component</h3>\n    "
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
     ], EmployeeOverviewComponent);
     return EmployeeOverviewComponent;
 }());
