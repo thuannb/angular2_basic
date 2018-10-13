@@ -5,6 +5,7 @@
             <td>Name</td>
             <td>Age</td>
             <td>createdAt</td>
+            <td>#</td>
         </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
             <td>{{item.name}}</td>
             <td>{{item.age}}</td>
             <td>{{item.createdAt | date}}</td>
+            <td><a [routerLink]="['/employee-detail', item.id]">Show Detail</a></td>
         </tr>
     </tbody>
 </table>

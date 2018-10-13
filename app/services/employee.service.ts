@@ -9,10 +9,14 @@ export class EmployeeService {
     constructor(private _http: Http) {
     }
 
-    private urlAPI: string = "http://5bc0169059c0e1001337f23b.mockapi.io/api/employees";
+    private urlAPI: string = "http://5bc0169059c0e1001337f23b.mockapi.io/api/employees/";
 
     GetList(): Observable<any[]> {
         return this._http.get(this.urlAPI).map((respone: Response) => respone.json());
+    }
+
+    GetSingle(id: number): Observable<any> {
+        return this._http.get(this.urlAPI + id).map((respone: Response) => respone.json());
     }
 
     CalcSumAmount(employees: any[]): number {

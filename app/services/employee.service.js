@@ -15,10 +15,13 @@ require("rxjs/add/operator/map");
 var EmployeeService = /** @class */ (function () {
     function EmployeeService(_http) {
         this._http = _http;
-        this.urlAPI = "http://5bc0169059c0e1001337f23b.mockapi.io/api/employees";
+        this.urlAPI = "http://5bc0169059c0e1001337f23b.mockapi.io/api/employees/";
     }
     EmployeeService.prototype.GetList = function () {
         return this._http.get(this.urlAPI).map(function (respone) { return respone.json(); });
+    };
+    EmployeeService.prototype.GetSingle = function (id) {
+        return this._http.get(this.urlAPI + id).map(function (respone) { return respone.json(); });
     };
     EmployeeService.prototype.CalcSumAmount = function (employees) {
         var totalSum = 0;
