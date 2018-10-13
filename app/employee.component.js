@@ -11,13 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var employee_service_1 = require("./services/employee.service");
+var router_1 = require("@angular/router");
 var EmployeeComponent = /** @class */ (function () {
-    function EmployeeComponent(employeeService) {
+    function EmployeeComponent(employeeService, router, activatedRoute) {
         this.employeeService = employeeService;
+        this.router = router;
+        this.activatedRoute = activatedRoute;
         this.employees = [];
+        this.pages = [1, 2, 3, 4, 5];
     }
     EmployeeComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.activatedRoute.queryParams.subscribe(function (params) {
+            _this.pageCurrent = params['pageNo'] || 1;
+            alert('Current Page: ' + _this.pageCurrent + ' and filter:' + params['filter']);
+        });
         this.employeeService.GetList().subscribe(function (respones) {
             _this.employees = respones;
             console.log(respones);
@@ -32,7 +40,8 @@ var EmployeeComponent = /** @class */ (function () {
             templateUrl: 'app/employee.component.html' //,
             // providers: [EmployeeService]//Dua ve module cho no load luon
         }),
-        __metadata("design:paramtypes", [employee_service_1.EmployeeService])
+        __metadata("design:paramtypes", [employee_service_1.EmployeeService,
+            router_1.Router, router_1.ActivatedRoute])
     ], EmployeeComponent);
     return EmployeeComponent;
 }());
