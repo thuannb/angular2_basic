@@ -1,0 +1,22 @@
+<form class="form-horizonal" #frm="ngForm" (ngSubmit)="CheckLogin(frm.value)">
+    <div class="form-group">
+        <label class="col-md-2">Userver</label>
+        <div class="col-md-10">
+            <input class="form-control" type="text" placeholder="User name" name="txtUserName" ngModel />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2">Password</label>
+        <div class="col-md-10">
+            <input class="form-control" type="password" name="txtPassword" ngModel />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-5">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+        <div class="col-md-5">
+            <button class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</form>

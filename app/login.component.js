@@ -11,22 +11,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var login_service_1 = require("./services/login.service");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(loginService) {
+var router_1 = require("@angular/router");
+var LoginComponent = /** @class */ (function () {
+    function LoginComponent(router, loginService) {
+        this.router = router;
         this.loginService = loginService;
     }
-    AppComponent.prototype.LogOut = function () {
-        this.loginService.SetLogin(false);
+    LoginComponent.prototype.CheckLogin = function (value) {
+        console.log(value);
+        if (value.txtUserName == "admin" && value.txtPassword == "123") {
+            this.loginService.SetLogin(true);
+            this.router.navigate(['']);
+        }
     };
-    AppComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: "app/app.component.html",
-            styleUrls: ["app/app.component.css"]
+            selector: 'login-component',
+            templateUrl: 'app/login.component.html'
         }),
-        __metadata("design:paramtypes", [login_service_1.LoginService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata("design:paramtypes", [router_1.Router,
+            login_service_1.LoginService])
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map
