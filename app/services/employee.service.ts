@@ -27,8 +27,12 @@ export class EmployeeService {
         return this._http.post(this.urlAPI, data).map((respone: Response) => respone.json());
     }
 
-    Delete(id: number):Observable<any> {
+    Delete(id: number): Observable<any> {
         return this._http.delete(this.urlAPI + id).map((respone: Response) => respone.json());
+    }
+
+    Search(keyword: string): Observable<any> {
+        return this._http.get(this.urlAPI + "?search=" + keyword).map((respone: Response) => respone.json());
     }
 
     CalcSumAmount(employees: any[]): number {

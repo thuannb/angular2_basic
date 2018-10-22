@@ -38,6 +38,14 @@ var EmployeeComponent = /** @class */ (function () {
             });
         }
     };
+    EmployeeComponent.prototype.Search = function () {
+        var _this = this;
+        this.employeeService.Search(this.keyword).subscribe(function (respone) {
+            _this.employees = respone;
+        }, function (error) {
+            console.log(error);
+        });
+    };
     EmployeeComponent.prototype.FillData = function () {
         var _this = this;
         this.employeeService.GetList().subscribe(function (respones) {

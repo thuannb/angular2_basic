@@ -12,6 +12,7 @@ export class EmployeeComponent implements OnInit {
     public totalSum: number;
     public pages: number[] = [1, 2, 3, 4, 5];
     public pageCurrent: number;
+    public keyword: string;
 
     constructor(private employeeService: EmployeeService,
         private router: Router, private activatedRoute: ActivatedRoute) {
@@ -37,6 +38,13 @@ export class EmployeeComponent implements OnInit {
         }
     }
 
+    Search() {
+        this.employeeService.Search(this.keyword).subscribe((respone: any) => {
+            this.employees = respone;
+        }, error => {
+            console.log(error);
+        });
+    }
     FillData() {
         this.employeeService.GetList().subscribe((respones: any) => {
             this.employees = respones;

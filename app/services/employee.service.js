@@ -32,6 +32,9 @@ var EmployeeService = /** @class */ (function () {
     EmployeeService.prototype.Delete = function (id) {
         return this._http.delete(this.urlAPI + id).map(function (respone) { return respone.json(); });
     };
+    EmployeeService.prototype.Search = function (keyword) {
+        return this._http.get(this.urlAPI + "?search=" + keyword).map(function (respone) { return respone.json(); });
+    };
     EmployeeService.prototype.CalcSumAmount = function (employees) {
         var totalSum = 0;
         for (var item in employees) {
