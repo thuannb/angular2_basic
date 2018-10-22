@@ -29,6 +29,9 @@ var EmployeeService = /** @class */ (function () {
     EmployeeService.prototype.Add = function (data) {
         return this._http.post(this.urlAPI, data).map(function (respone) { return respone.json(); });
     };
+    EmployeeService.prototype.Delete = function (id) {
+        return this._http.delete(this.urlAPI + id).map(function (respone) { return respone.json(); });
+    };
     EmployeeService.prototype.CalcSumAmount = function (employees) {
         var totalSum = 0;
         for (var item in employees) {

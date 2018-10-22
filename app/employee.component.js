@@ -26,13 +26,26 @@ var EmployeeComponent = /** @class */ (function () {
             _this.pageCurrent = params['pageNo'] || 1;
             //alert('Current Page: ' + this.pageCurrent + ' and filter:' + params['filter']);
         });
+        this.FillData();
+        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
+    };
+    EmployeeComponent.prototype.Delete = function (id) {
+        var _this = this;
+        var confirmResult = confirm("Are you sure delete employee?");
+        if (confirmResult) {
+            this.employeeService.Delete(id).subscribe(function (respone) {
+                _this.FillData();
+            });
+        }
+    };
+    EmployeeComponent.prototype.FillData = function () {
+        var _this = this;
         this.employeeService.GetList().subscribe(function (respones) {
             _this.employees = respones;
             console.log(respones);
         }, function (error) {
             console.log(error);
         });
-        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
     };
     EmployeeComponent = __decorate([
         core_1.Component({

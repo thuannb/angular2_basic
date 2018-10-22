@@ -23,13 +23,26 @@ export class EmployeeComponent implements OnInit {
             this.pageCurrent = params['pageNo'] || 1;
             //alert('Current Page: ' + this.pageCurrent + ' and filter:' + params['filter']);
         })
+        this.FillData();
+
+        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
+    }
+
+    Delete(id: number) {
+        let confirmResult = confirm("Are you sure delete employee?");
+        if (confirmResult) {
+            this.employeeService.Delete(id).subscribe(respone => {
+                this.FillData();
+            })
+        }
+    }
+
+    FillData() {
         this.employeeService.GetList().subscribe((respones: any) => {
             this.employees = respones;
             console.log(respones);
         }, error => {
             console.log(error);
         });
-
-        // this.totalSum = this.employeeList.CalcSumAmount(this.employees);
     }
 }
