@@ -19,6 +19,14 @@ export class EmployeeService {
         return this._http.get(this.urlAPI + id).map((respone: Response) => respone.json());
     }
 
+    Update(id: number, data: any): Observable<any> {
+        return this._http.put(this.urlAPI + id, data).map((respone: Response) => respone.json());
+    }
+
+    Add(data: any): Observable<any> {
+        return this._http.post(this.urlAPI, data).map((respone: Response) => respone.json());
+    }
+
     CalcSumAmount(employees: any[]): number {
         let totalSum: number = 0;
 

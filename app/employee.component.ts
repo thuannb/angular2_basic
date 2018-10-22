@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.queryParams.subscribe(params => {
             this.pageCurrent = params['pageNo'] || 1;
-            alert('Current Page: ' + this.pageCurrent + ' and filter:' + params['filter']);
+            //alert('Current Page: ' + this.pageCurrent + ' and filter:' + params['filter']);
         })
         this.employeeService.GetList().subscribe((respones: any) => {
             this.employees = respones;

@@ -1,0 +1,18 @@
+<form class="form" #frm="ngForm" (submit)="Save(frm.value)">
+    <div class="from-group">
+        <label>Name</label>
+        <div><input type="text" name="txtName" ngModel [(ngModel)]="employee.name" /></div>
+    </div>
+    <div class="from-group">
+        <label>Age</label>
+        <div><input type="number" name="numAge" ngModel [(ngModel)]="employee.age" /></div>
+    </div>
+    <div class="from-group">
+        <label>Status</label>
+        <div><input type="checkbox" name="chkStatus" ngModel [(ngModel)]="employee.status" /></div>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+        <button type="button" (click)="GoToEmployee()">Cancel</button>
+    </div>
+</form>

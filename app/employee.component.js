@@ -24,7 +24,7 @@ var EmployeeComponent = /** @class */ (function () {
         var _this = this;
         this.activatedRoute.queryParams.subscribe(function (params) {
             _this.pageCurrent = params['pageNo'] || 1;
-            alert('Current Page: ' + _this.pageCurrent + ' and filter:' + params['filter']);
+            //alert('Current Page: ' + this.pageCurrent + ' and filter:' + params['filter']);
         });
         this.employeeService.GetList().subscribe(function (respones) {
             _this.employees = respones;

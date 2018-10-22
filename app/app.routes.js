@@ -5,16 +5,17 @@ var home_component_1 = require("./home.component");
 var employee_component_1 = require("./employee.component");
 var notfound_component_1 = require("./notfound.component");
 var employee_detail_component_1 = require("./employee-detail.component");
+var employee_edit_component_1 = require("./employee-edit.component");
+var employee_add_component_1 = require("./employee-add.component");
 var employee_overview_component_1 = require("./employee-overview.component");
 var employee_project_component_1 = require("./employee-project.component");
 var login_component_1 = require("./login.component");
-var check_login_guard_1 = require("./guards/check-login.guard");
 var check_save_form_guard_1 = require("./guards/check-save-form.guard");
 var routing = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'login', component: login_component_1.LoginComponent },
     // { path: '', redirectTo: 'employee', pathMatch: "full" },//vao trang chu tu dong chuyen sang trang con
-    { path: 'employee', component: employee_component_1.EmployeeComponent, canActivate: [check_login_guard_1.CheckLoginGuard] },
+    { path: 'employee', component: employee_component_1.EmployeeComponent },
     {
         path: 'employee-detail/:id',
         component: employee_detail_component_1.EmployeeDetailComponent, canDeactivate: [check_save_form_guard_1.CheckSaveFormGuard],
@@ -24,6 +25,8 @@ var routing = [
             { path: 'projects', component: employee_project_component_1.EmployeeProjectComponent }
         ]
     },
+    { path: 'employee-edit/:id', component: employee_edit_component_1.EmployeeEditComponent },
+    { path: 'employee-add', component: employee_add_component_1.EmployeeAddComponent },
     { path: '**', component: notfound_component_1.NotFoundComponent }
 ];
 exports.appRoutes = router_1.RouterModule.forRoot(routing);

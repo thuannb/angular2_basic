@@ -23,6 +23,12 @@ var EmployeeService = /** @class */ (function () {
     EmployeeService.prototype.GetSingle = function (id) {
         return this._http.get(this.urlAPI + id).map(function (respone) { return respone.json(); });
     };
+    EmployeeService.prototype.Update = function (id, data) {
+        return this._http.put(this.urlAPI + id, data).map(function (respone) { return respone.json(); });
+    };
+    EmployeeService.prototype.Add = function (data) {
+        return this._http.post(this.urlAPI, data).map(function (respone) { return respone.json(); });
+    };
     EmployeeService.prototype.CalcSumAmount = function (employees) {
         var totalSum = 0;
         for (var item in employees) {
